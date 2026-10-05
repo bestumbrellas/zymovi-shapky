@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>В'язаний комплект: шапка з відворотом + снуд</title>
+    <!-- Захист від копіювання, правого кліка та відкриття коду -->
+    <script>
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+        document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+        document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 123 ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+                (e.ctrlKey && e.keyCode === 85)) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 85px;
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #ffffff;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        /* Верхній банер (у стилі фіолетової картки з референсу) */
+        .top-banner {
+            background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 60%, #3b1470 100%);
+            color: #fff;
+            padding: 22px 20px 65px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .banner-content { position: relative; z-index: 2; }
+        .snowfall {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; overflow: hidden; z-index: 1;
+        }
+        .snowflake {
+            position: absolute; top: -12%; color: #fff; opacity: 0.85;
+            text-shadow: 0 0 4px rgba(0,0,0,0.15);
+            animation: snow-fall linear infinite;
+        }
+        @keyframes snow-fall {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); }
+            100% { transform: translateY(230px) translateX(10px) rotate(360deg); }
+        }
+        .snowflake:nth-child(1) { left: 4%;  font-size: 12px; animation-duration: 7s;  animation-delay: 0s; }
+        .snowflake:nth-child(2) { left: 16%; font-size: 16px; animation-duration: 9s;  animation-delay: 1.2s; }
+        .snowflake:nth-child(3) { left: 28%; font-size: 10px; animation-duration: 6s;  animation-delay: 2.4s; }
+        .snowflake:nth-child(4) { left: 40%; font-size: 14px; animation-duration: 8.5s;animation-delay: 0.6s; }
+        .snowflake:nth-child(5) { left: 52%; font-size: 11px; animation-duration: 7.5s;animation-delay: 3s; }
+        .snowflake:nth-child(6) { left: 64%; font-size: 15px; animation-duration: 9.5s;animation-delay: 1.8s; }
+        .snowflake:nth-child(7) { left: 76%; font-size: 12px; animation-duration: 6.5s;animation-delay: 2.7s; }
+        .snowflake:nth-child(8) { left: 88%; font-size: 17px; animation-duration: 8s;  animation-delay: 0.3s; }
+        .snowflake:nth-child(9) { left: 96%; font-size: 10px; animation-duration: 7.2s;animation-delay: 3.6s; }
+        .snowflake:nth-child(10){ left: 10%; font-size: 13px; animation-duration: 9.2s;animation-delay: 4.2s; }
+        .snowflake:nth-child(11){ left: 34%; font-size: 9px;  animation-duration: 6.8s;animation-delay: 1.5s; }
+        .snowflake:nth-child(12){ left: 58%; font-size: 14px; animation-duration: 8.8s;animation-delay: 2.1s; }
+        /* Фонові водяні знаки-сніжинки (аналог візерунку з парасольками на референсі) */
+        .banner-watermarks {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .banner-watermarks span {
+            position: absolute; font-size: 46px; color: rgba(255,255,255,0.10); line-height: 1;
+        }
+        .banner-header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .btn-cart-top {
+            background: rgba(255,255,255,0.16);
+            color: #fff;
+            padding: 7px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.35);
+            transition: background 0.2s;
+        }
+        .btn-cart-top:hover { background: rgba(255,255,255,0.28); }
+        .hero-title {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+            margin: 4px 0 10px 0;
+            color: #ffffff;
+            line-height: 1.3;
+            text-align: left;
+        }
+        .hero-subtitle {
+            font-size: 13.5px;
+            color: rgba(255,255,255,0.82);
+            text-align: left;
+            line-height: 1.5;
+            margin: 0 0 18px 0;
+        }
+        .viewers-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28);
+            padding: 7px 14px; border-radius: 20px; font-size: 12.5px; color: #f3ecff;
+        }
+        .viewers-dot {
+            width: 8px; height: 8px; border-radius: 50%; background: #3ddc84;
+            box-shadow: 0 0 6px #3ddc84; display: inline-block; flex-shrink: 0;
+        }
+        .viewers-badge b { color: #ffffff; }
+
+        /* Біла картка з ціною та акцією, що "нависає" над банером */
+        .price-card {
+            background: #ffffff;
+            margin: -46px 15px 22px 15px;
+            border-radius: 14px;
+            padding: 22px 18px 18px 18px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+        .price-row-main {
+            display: flex; align-items: baseline; justify-content: center; gap: 12px; margin-bottom: 4px;
+        }
+        .price-old-main { font-size: 16px; color: #aaaaaa; text-decoration: line-through; }
+        .price-current-main { font-size: 30px; font-weight: 800; color: #e74c3c; }
+        .price-caption { font-size: 12px; color: #999999; margin-bottom: 14px; }
+        .promo-strip-main {
+            background: #e74c3c; color: #fff; font-weight: 800; font-size: 13px;
+            text-transform: uppercase; letter-spacing: 0.3px; padding: 11px 14px; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px;
+            line-height: 1.35;
+        }
+        .promo-footnote {
+            font-size: 11.5px; color: #888888; font-style: italic; line-height: 1.55; text-align: left;
+        }
+        .promo-footnote b { color: #e74c3c; font-style: normal; }
+
+        .product-title-main { font-size: 19px; font-weight: bold; color: #123a5e; text-align: center; padding: 18px 15px 4px 15px; }
+        .product-subtitle-main { font-size: 13px; color: #777; text-align: center; padding: 0 15px 10px 15px; }
+
+        /* Картки кольорів */
+        .color-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 15px 20px 15px;
+        }
+        .color-card {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;
+            cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s; text-align: center;
+        }
+        .color-card.selected { border-color: #27ae60; border-width: 2px; }
+        .color-card.active-photo { border-color: #7c3aed; box-shadow: 0 0 0 1px #7c3aed; }
+        .color-card img {
+            width: 100%; height: 150px; object-fit: contain; background: #f9f9f9; padding: 8px 8px 0 8px; box-sizing: border-box;
+        }
+        .color-card-info { padding: 8px 8px 10px 8px; }
+        .color-card-name { font-size: 13px; font-weight: 600; color: #222; margin-bottom: 3px; }
+        .color-card-price { font-size: 15px; color: #e44d26; font-weight: bold; display: flex; justify-content: center; gap: 6px; margin-bottom: 8px; }
+        .btn-add-cart {
+            width: 100%; background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); color: #fff; border: none; padding: 8px 4px;
+            border-radius: 5px; font-size: 12px; font-weight: bold; cursor: pointer; transition: filter 0.15s;
+        }
+        .btn-add-cart:hover { filter: brightness(1.08); }
+        .btn-add-cart.added { background: #27ae60; cursor: default; }
+
+        .set-block { padding: 10px 15px 25px 15px; border-top: 8px solid #f4f6f9; }
+        .set-heading {
+            font-size: 18px; font-weight: bold; color: #4c1d95; margin-bottom: 15px; text-align: center;
+        }
+
+        /* Галерея */
+        .gallery-main {
+            width: 100%; height: 320px; background: #f9f9f9; border-radius: 8px;
+            border: 1px solid #e0e0e0; display: flex; align-items: center; justify-content: center;
+            overflow: hidden; margin-bottom: 10px; cursor: zoom-in;
+        }
+        .gallery-main img { width: 100%; height: 100%; object-fit: contain; }
+        .gallery-thumbs {
+            display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px;
+        }
+        .gallery-thumbs img {
+            width: 62px; height: 62px; object-fit: cover; border-radius: 6px;
+            border: 2px solid transparent; flex-shrink: 0; cursor: pointer; background: #f9f9f9;
+        }
+        .gallery-thumbs img.active { border-color: #e74c3c; }
+
+        /* Відео огляд */
+        .video-block { margin-top: 18px; }
+        .video-block-title { font-size: 15px; font-weight: bold; color: #222; margin-bottom: 8px; }
+        .video-container {
+            width: 100%; height: 320px; margin: 0 auto; border-radius: 8px; overflow: hidden;
+            background: #000; box-shadow: 0 6px 20px rgba(0,0,0,0.22); border: 1px solid #e0e0e0;
+        }
+        .video-container video {
+            width: 100%; height: 100%; object-fit: contain; display: block; background: #000;
+        }
+
+        /* Опис */
+        .desc-block { margin-top: 20px; font-size: 14px; color: #444; }
+        .desc-block h3 { font-size: 15px; color: #222; margin: 14px 0 6px 0; }
+        .desc-block p { margin-bottom: 10px; }
+
+        /* Характеристики */
+        .spec-title {
+            font-size: 15px; font-weight: bold; color: #4c1d95; margin: 18px 0 10px 0;
+        }
+        .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .spec-table tr { border-bottom: 1px solid #eee; }
+        .spec-table tr:last-child { border-bottom: none; }
+        .spec-table td { padding: 9px 4px; }
+        .spec-table td:first-child { color: #888; width: 42%; }
+        .spec-table td:last-child { color: #222; font-weight: 500; }
+
+        .btn-order-set {
+            display: block; text-align: center; background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); color: #fff;
+            text-decoration: none; padding: 13px; border-radius: 8px; font-weight: bold;
+            margin-top: 20px; border: none; width: 100%; cursor: pointer; font-size: 15px;
+            box-shadow: 0 6px 16px rgba(76,29,149,0.25); transition: filter 0.15s;
+        }
+        .btn-order-set:hover { filter: brightness(1.08); }
+
+        /* Блок відгуків (Карусель) — у тон шапки */
+        .reviews-section {
+            background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 60%, #3b1470 100%);
+            color: #fff; padding: 30px 15px; margin-top: 20px; text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .reviews-title { font-size: 20px; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; letter-spacing: 0.3px; }
+        .reviews-subtitle { font-size: 14px; color: #e3d6fb; margin-bottom: 22px; }
+        .carousel-container { position: relative; max-width: 100%; overflow: hidden; }
+        .carousel-track { display: flex; transition: transform 0.4s ease-in-out; }
+        .review-card {
+            min-width: 100%; background: #fff; color: #333; border-radius: 12px; padding: 20px;
+            text-align: left; box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+        }
+        .review-header {
+            font-size: 13px; color: #6d28d9; margin-bottom: 12px; border-bottom: 1px solid #ece2fb;
+            padding-bottom: 8px; font-weight: bold;
+        }
+        .review-text { font-size: 14px; color: #444; line-height: 1.5; }
+        .carousel-btns { display: flex; justify-content: center; gap: 12px; margin-top: 18px; }
+        .carousel-btn {
+            background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.35);
+            padding: 9px 18px; border-radius: 20px; font-weight: bold; font-size: 13px; cursor: pointer;
+            transition: background 0.2s;
+        }
+        .carousel-btn:hover { background: rgba(255,255,255,0.26); }
+
+        /* Як замовити */
+        .howto-section { padding: 25px 15px; background: #f9f9f9; }
+        .howto-title { text-align: center; font-size: 20px; font-weight: bold; text-transform: uppercase; margin-bottom: 20px; color: #4c1d95; }
+        .howto-step {
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px;
+            display: flex; align-items: center; gap: 15px; margin-bottom: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .howto-icon {
+            width: 56px; height: 56px; background: #f1e9fe; color: #fff; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold;
+            flex-shrink: 0; border: 1px solid #dcc4fb;
+        }
+        .howto-desc h3 { font-size: 15px; color: #222; margin-bottom: 3px; }
+        .howto-desc p { font-size: 13px; color: #666; }
+
+        /* Форма замовлення */
+        .order-section { padding: 30px 15px; background: #fff; }
+        .order-title { text-align: center; font-size: 20px; font-weight: bold; color: #4c1d95; margin-bottom: 6px; }
+        .order-subtitle { text-align: center; font-size: 13px; color: #777; margin-bottom: 20px; }
+        .order-form { display: flex; flex-direction: column; gap: 12px; }
+        .order-form label { font-size: 13px; font-weight: 600; color: #444; margin-bottom: 4px; display: block; }
+        .order-form input[type="text"], .order-form input[type="tel"], .order-form select {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 15px; color: #222;
+        }
+        .order-form input:focus, .order-form select:focus { outline: none; border-color: #6d28d9; }
+        .cart-summary { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
+        .cart-empty { font-size: 13px; color: #999; text-align: center; padding: 14px; border: 1px dashed #ddd; border-radius: 6px; }
+        .cart-row {
+            display: flex; align-items: center; gap: 8px; border: 1px solid #eee; border-radius: 6px; padding: 8px 10px;
+        }
+        .cart-row-info { flex: 1; min-width: 0; }
+        .cart-row-name { font-size: 13px; font-weight: 600; color: #222; }
+        .cart-row-price { font-size: 12px; color: #888; }
+        .cart-row-price .discount-tag { color: #27ae60; font-weight: bold; margin-left: 4px; }
+        .cart-remove { background: none; border: none; color: #c0392b; font-size: 16px; cursor: pointer; padding: 0 2px; }
+        .cart-total { display: flex; justify-content: space-between; font-size: 15px; font-weight: bold; color: #222; padding: 8px 2px 0 2px; }
+        .btn-submit-order {
+            background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); color: #fff; border: none; padding: 14px; border-radius: 8px;
+            font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 6px;
+            box-shadow: 0 8px 18px rgba(76,29,149,0.28); transition: filter 0.15s;
+        }
+        .btn-submit-order:hover { filter: brightness(1.08); }
+        .form-note { font-size: 12px; color: #999; text-align: center; margin-top: 10px; }
+
+        /* Доставка та оплата */
+        .delivery-section { padding: 30px 20px; background: #fff; border-top: 1px solid #eee; }
+        .delivery-title-main { text-align: center; font-size: 20px; font-weight: bold; color: #4c1d95; margin-bottom: 25px; }
+        .delivery-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+        .delivery-icon-box { font-size: 32px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+        .delivery-content h3 { font-size: 16px; font-weight: bold; color: #222; margin-bottom: 4px; }
+        .delivery-content p { font-size: 14px; color: #666; line-height: 1.4; }
+
+        .footer-links {
+            margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee; font-size: 12px;
+            display: flex; flex-direction: column; gap: 8px; text-align: center;
+        }
+        .footer-links a { color: #1a0dab; text-decoration: underline; }
+
+        /* Плаваюча панель знизу */
+        .floating-bar {
+            position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px;
+            background: #ffffff; box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2); padding: 10px 15px;
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+            border-top: 3px solid #6d28d9; border-top-left-radius: 8px; border-top-right-radius: 8px; gap: 10px;
+        }
+        .floating-text { font-size: 13px; font-weight: bold; color: #333333; line-height: 1.25; flex: 1; }
+        .btn-cart-floating {
+            background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); color: #fff; padding: 10px 16px; border-radius: 8px; text-decoration: none;
+            font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(76,29,149,0.3); cursor: pointer; border: none; transition: filter 0.15s;
+        }
+        .btn-cart-floating:hover { filter: brightness(1.08); }
+
+        /* Лічильник переглядів (в банері, не плаваючий) */
+        .viewers-badge {
+            display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;
+            background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+            padding: 5px 12px; border-radius: 20px; font-size: 12px; color: #eaf4fb;
+        }
+        .viewers-badge b { color: #ffffff; }
+
+        /* Модальне вікно */
+        .custom-alert-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6);
+            display: none; align-items: center; justify-content: center; z-index: 99999; padding: 15px;
+        }
+        .custom-alert-box {
+            background: #fff; width: 100%; max-width: 340px; border-radius: 12px; padding: 25px 20px;
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); animation: scaleUp 0.2s ease-in-out;
+        }
+        @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .alert-icon-wrap { font-size: 45px; color: #e67e22; margin-bottom: 10px; line-height: 1; }
+        .alert-title { font-size: 18px; font-weight: bold; color: #d9534f; text-transform: uppercase; margin-bottom: 12px; }
+        .alert-title.success { color: #27ae60; }
+        .alert-message { font-size: 14px; color: #555; margin-bottom: 20px; line-height: 1.4; }
+        .alert-btn {
+            background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); color: #fff; border: none; width: 100%; padding: 12px; border-radius: 8px;
+            font-size: 14px; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: filter 0.2s;
+        }
+        .alert-btn:hover { filter: brightness(1.08); }
+        .alert-btn-danger { background: #e74c3c; }
+        .alert-btn-success { background: #27ae60; }
+    </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3476775215838374');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3476775215838374&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Верхній банер -->
+    <div class="top-banner">
+        <div class="banner-watermarks" aria-hidden="true">
+            <span style="top: 6%; left: 8%;">❄</span>
+            <span style="top: 40%; left: 78%;">❄</span>
+            <span style="top: 68%; left: 18%;">❄</span>
+            <span style="top: 12%; left: 60%;">❄</span>
+            <span style="top: 78%; left: 55%;">❄</span>
+            <span style="top: 30%; left: 30%;">❄</span>
+        </div>
+        <div class="snowfall" aria-hidden="true">
+            <span class="snowflake">❄</span><span class="snowflake">❅</span><span class="snowflake">❄</span>
+            <span class="snowflake">❆</span><span class="snowflake">❄</span><span class="snowflake">❅</span>
+            <span class="snowflake">❄</span><span class="snowflake">❆</span><span class="snowflake">❄</span>
+            <span class="snowflake">❅</span><span class="snowflake">❄</span><span class="snowflake">❆</span>
+        </div>
+        <div class="banner-content">
+        <div class="banner-header">
+            <button type="button" onclick="handleCartClick()" class="btn-cart-top">🛒 Кошик <span id="cart-count">0</span></button>
+        </div>
+        <div class="hero-title">Теплий жіночий комплект</div>
+        <div class="hero-subtitle">Шапка з відворотом та снуд із м'якої еластичної пряжі 50% вовна / 50% акрил. 6 кольорів на вибір.</div>
+        <div class="viewers-badge"><span class="viewers-dot"></span> Зараз переглядають сайт: <b id="viewers-count">5</b> людей</div>
+        </div>
+    </div>
+
+    <!-- Біла картка з ціною та акцією -->
+    <div class="price-card">
+        <div class="price-row-main">
+            <span class="price-current-main">896 грн</span>
+        </div>
+        <div class="price-caption">за один комплект (шапка + снуд)</div>
+        <div class="promo-strip-main">🎁 Акція на другий комплект — знижка −20%</div>
+        <div class="promo-footnote">Акція діє лише на комплекти різних кольорів із каталогу нижче. <b>Один колір двічі обрати не можна, знижка застосовується автоматично.</div>
+    </div>
+
+    <!-- ===================== КАРТКИ КОЛЬОРІВ ===================== -->
+    <div class="color-grid" id="colorGrid" data-set-name="В'язаний комплект (шапка з відворотом + снуд)">
+        <div class="color-card" data-color="Чорний" onclick="selectColorPhoto(this)">
+            <img src="1.jpg" alt="Чорний">
+            <div class="color-card-info">
+                <div class="color-card-name">Чорний</div>
+                <div class="color-card-price"><span class="new-price">896 грн</span></div>
+                <button type="button" class="btn-add-cart" onclick="event.stopPropagation(); addToCartFromCard(this)">Додати в кошик</button>
+            </div>
+        </div>
+        <div class="color-card" data-color="Пудровий" onclick="selectColorPhoto(this)">
+            <img src="2.jpg" alt="Пудровий">
+            <div class="color-card-info">
+                <div class="color-card-name">Пудровий</div>
+                <div class="color-card-price"><span class="new-price">896 грн</span></div>
+                <button type="button" class="btn-add-cart" onclick="event.stopPropagation(); addToCartFromCard(this)">Додати в кошик</button>
+            </div>
+        </div>
+        <div class="color-card" data-color="Світло-сірий" onclick="selectColorPhoto(this)">
+            <img src="3.jpg" alt="Світло-сірий">
+            <div class="color-card-info">
+                <div class="color-card-name">Світло-сірий</div>
+                <div class="color-card-price"><span class="new-price">896 грн</span></div>
+                <button type="button" class="btn-add-cart" onclick="event.stopPropagation(); addToCartFromCard(this)">Додати в кошик</button>
+            </div>
+        </div>
+        <div class="color-card" data-color="Темно-синій" onclick="selectColorPhoto(this)">
+            <img src="4.jpg" alt="Темно-синій">
+            <div class="color-card-info">
+                <div class="color-card-name">Темно-синій</div>
+                <div class="color-card-price"><span class="new-price">896 грн</span></div>
+                <button type="button" class="btn-add-cart" onclick="event.stopPropagation(); addToCartFromCard(this)">Додати в кошик</button>
+            </div>
+        </div>
+        <div class="color-card" data-color="Молочний" onclick="selectColorPhoto(this)">
+            <img src="5.jpg" alt="Молочний">
+            <div class="color-card-info">
+                <div class="color-card-name">Молочний</div>
+                <div class="color-card-price"><span class="new-price">896 грн</span></div>
+                <button type="button" class="btn-add-cart" onclick="event.stopPropagation(); addToCartFromCard(this)">Додати в кошик</button>
+            </div>
+        </div>
+        <div class="color-card" data-color="Бордовий" onclick="selectColorPhoto(this)">
+            <img src="6.jpg" alt="Бордовий">
+            <div class="color-card-info">
+                <div class="color-card-name">Бордовий</div>
+                <div class="color-card-price"><span class="new-price">896 грн</span></div>
+                <button type="button" class="btn-add-cart" onclick="event.stopPropagation(); addToCartFromCard(this)">Додати в кошик</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== ДЕТАЛЬНИЙ ОГЛЯД ===================== -->
+    <div class="set-block" id="set1">
+        <div class="set-heading">Детальний огляд</div>
+
+        <!-- Галерея -->
+        <div class="gallery-main"><img id="gallery1-main" src="7.jpg" alt="Фото комплекту" onclick="openLightbox('gallery1-main')"></div>
+        <div class="gallery-thumbs" id="gallery1-thumbs">
+            <img src="7.jpg" alt="Фото 1" class="active" onclick="selectGalleryPhoto(this)">
+            <img src="8.jpg" alt="Фото 2" onclick="selectGalleryPhoto(this)">
+            <img src="9.jpg" alt="Фото 3" onclick="selectGalleryPhoto(this)">
+            <img src="10.jpg" alt="Фото 4" onclick="selectGalleryPhoto(this)">
+            <img src="11.jpg" alt="Фото 5" onclick="selectGalleryPhoto(this)">
+            <img src="12.jpg" alt="Фото 6" onclick="selectGalleryPhoto(this)">
+        </div>
+
+        <!-- Відео огляд -->
+        <div class="video-block">
+            <div class="video-block-title">🎥 Відео-огляд комплекту</div>
+            <!-- Замініть "video.mp4" на назву свого відеофайлу.
+                 autoplay + muted + loop + playsinline = відео вмикається само і крутиться
+                 по колу нескінченно, поки користувач сам не поставить його на паузу через controls.
+                 Контейнер фіксованого розміру (як у фото-галереї) — щоб рамка не "стрибала"
+                 залежно від пропорцій відеофайлу. -->
+            <div class="video-container">
+                <video controls autoplay muted loop playsinline preload="auto" poster="7.jpg">
+                    <source src="video.mp4" type="video/mp4">
+                    Ваш браузер не підтримує відтворення відео.
+                </video>
+            </div>
+        </div>
+
+
+
+        <!-- Опис -->
+        <div class="desc-block">
+            <p>Теплий в'язаний комплект — шапка з відворотом та снуд, виконані з м'якої еластичної пряжі, яка приємна до тіла й добре тримає форму. Це не просто стильний аксесуар, а зручна та функціональна річ, яка легко стане улюбленою частиною вашого осінньо-зимового гардеробу. Комплект чудово поєднується з будь-яким верхнім одягом і однаково добре виглядає і в місті, і на прогулянці за містом.</p>
+        </div>
+
+        <!-- Характеристики -->
+        <div class="spec-title">Характеристики</div>
+        <table class="spec-table">
+            <tr><td>Комплектація</td><td>шапка з відворотом + снуд</td></tr>
+            <tr><td>Склад пряжі</td><td>50% вовна, 50% акрил</td></tr>
+            <tr><td>Підклад</td><td>фліс, смужка 10 см</td></tr>
+            <tr><td>Температурний режим</td><td>комфортно від +5°C до −20°C</td></tr>
+            <tr><td>Сезон</td><td>осінь – зима</td></tr>
+            <tr><td>Розмір</td><td>універсальний, 56–59 см</td></tr>
+            <tr><td>Країна-виробник</td><td>Україна</td></tr>
+        </table>
+
+        <button type="button" class="btn-order-set" onclick="quickAddActive()">Додати обраний колір у кошик</button>
+    </div>
+
+    <!-- Форма замовлення -->
+    <div class="order-section" id="orderForm">
+        <div class="order-title">Оформити замовлення</div>
+        <div class="order-subtitle" id="orderSubtitle">Залиште ім'я та телефон — ми передзвонимо для підтвердження</div>
+
+        <form class="order-form" id="leadForm" onsubmit="return submitOrderForm(event)">
+            <div>
+                <label>Ваш кошик</label>
+                <div class="cart-summary" id="cartSummary"></div>
+            </div>
+            <div>
+                <label for="clientName">Ваше ім'я</label>
+                <input type="text" id="clientName" name="name" placeholder="Наприклад, Олена" required>
+            </div>
+            <div>
+                <label for="clientPhone">Номер телефону</label>
+                <input type="tel" id="clientPhone" name="phone" placeholder="+380 XX XXX XX XX" inputmode="tel" autocomplete="tel" maxlength="19" required>
+                <div id="phoneError" style="display:none;color:#d93025;font-size:12.5px;margin-top:6px;">Введіть дійсний український номер, наприклад +380 67 123 45 67</div>
+            </div>
+            <div>
+                <label for="clientComment">Коментар (уточнення, побажання)</label>
+                <input type="text" id="clientComment" name="comment" placeholder="Наприклад: підходить будь-який з цих кольорів">
+            </div>
+            <!-- honeypot: люди його не бачать, боти заповнюють -->
+            <input type="text" id="orderWebsite" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+            <button type="submit" class="btn-submit-order">Відправити заявку</button>
+        </form>
+        <div class="form-note">Натискаючи кнопку, ви погоджуєтесь з політикою конфіденційності</div>
+    </div>
+
+    <!-- Блок відгуків (Карусель) -->
+    <div class="reviews-section">
+        <div class="reviews-title">Реальні відгуки покупців</div>
+        <div class="reviews-subtitle">Рейтинг: 4.9/5 ⭐⭐⭐⭐⭐ (97% рекомендують)</div>
+
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+
+                <div class="review-card">
+                    <div class="review-header">Замовлення №147 • Катерина (Дніпро)</div>
+                    <div class="review-text">Комплект сидить ідеально, снуд дуже теплий і не колеться. Якість пряжі приємно здивувала.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">Замовлення №189 • Ірина (Львів)</div>
+                    <div class="review-text">Брала одразу два кольори завдяки знижці — м'який, приємний до тіла, тримає тепло навіть у мороз. Рекомендую!</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">Замовлення №203 • Марина (Одеса)</div>
+                    <div class="review-text">Дуже зручний і теплий комплект, підклад приємний, не тисне. Доставили швидко.</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="carousel-btns">
+            <button class="carousel-btn" onclick="prevSlide()">← Назад</button>
+            <button class="carousel-btn" onclick="nextSlide()">Вперед →</button>
+        </div>
+    </div>
+
+    <!-- Як замовити -->
+    <div class="howto-section">
+        <div class="howto-title">Як замовити?</div>
+
+        <div class="howto-step">
+            <div class="howto-icon">📝</div>
+            <div class="howto-desc">
+                <h3>Крок 1:</h3>
+                <p>Оберіть один або декілька кольорів та заповніть просту форму — ім'я і номер телефону.</p>
+            </div>
+        </div>
+
+        <div class="howto-step">
+            <div class="howto-icon">📞</div>
+            <div class="howto-desc">
+                <h3>Крок 2:</h3>
+                <p>Дочекайтеся дзвінка оператора для уточнення деталей доставки.</p>
+            </div>
+        </div>
+
+        <div class="howto-step">
+            <div class="howto-icon">📦</div>
+            <div class="howto-desc">
+                <h3>Крок 3:</h3>
+                <p>Отримайте та оплатіть товар на пошті після огляду.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Доставка та оплата -->
+    <div class="delivery-section">
+        <div class="delivery-title-main">Доставка та оплата</div>
+
+        <div class="delivery-item">
+            <div class="delivery-icon-box">🚚</div>
+            <div class="delivery-content">
+                <h3>Швидка доставка</h3>
+                <p>Новою Поштою та Укрпоштою 1–3 дні по всій Україні.</p>
+            </div>
+        </div>
+
+        <div class="delivery-item">
+            <div class="delivery-icon-box">💳</div>
+            <div class="delivery-content">
+                <h3>Оплата при отриманні</h3>
+                <p>Ми не приймаємо передоплату. Оплата лише при отриманні на пошті після огляду.</p>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="politics.html">Політика конфіденційності</a>
+            <a href="ugoda.html">Угода користувача</a>
+            <a href="vozvrat.html">Умови гарантії та повернення</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Плаваюча панель знизу -->
+<div class="floating-bar">
+    <div class="floating-text">❄️ Другий колір -20% — обирай зараз!</div>
+    <button type="button" onclick="handleCartClick()" class="btn-cart-floating">🛒 Кошик <span id="cart-count-floating">0</span></button>
+</div>
+
+<!-- Модальне вікно порожнього кошика -->
+<div class="custom-alert-overlay" id="emptyCartAlert">
+    <div class="custom-alert-box">
+        <div class="alert-icon-wrap">🛒</div>
+        <div class="alert-title">Кошик порожній!</div>
+        <div class="alert-message">Оберіть колір комплекту та натисніть «Додати в кошик» перед оформленням.</div>
+        <button type="button" class="alert-btn" onclick="closeEmptyCartAlert()">Обрати колір</button>
+    </div>
+</div>
+
+<!-- Модальне вікно успішного замовлення -->
+<div class="custom-alert-overlay" id="orderSuccessAlert">
+    <div class="custom-alert-box">
+        <div class="alert-icon-wrap">✅</div>
+        <div class="alert-title success">Заявку прийнято!</div>
+        <div class="alert-message">Дякуємо! Наш оператор зателефонує вам найближчим часом для підтвердження замовлення.</div>
+        <button type="button" class="alert-btn alert-btn-success" onclick="closeSuccessAlert()">Добре</button>
+    </div>
+</div>
+
+<!-- Модальне вікно помилки форми -->
+<div class="custom-alert-overlay" id="formErrorAlert">
+    <div class="custom-alert-box">
+        <div class="alert-icon-wrap">⚠️</div>
+        <div class="alert-title">Перевірте дані</div>
+        <div class="alert-message" id="formErrorMessage">Будь ласка, заповніть ім'я та коректний номер телефону.</div>
+        <button type="button" class="alert-btn alert-btn-danger" onclick="closeErrorAlert()">Зрозуміло</button>
+    </div>
+</div>
+
+<!-- Модальне вікно: колір вже у кошику -->
+<div class="custom-alert-overlay" id="duplicateColorAlert">
+    <div class="custom-alert-box">
+        <div class="alert-icon-wrap">🎨</div>
+        <div class="alert-title">Цей колір вже у кошику</div>
+        <div class="alert-message">Знижка -20% на другий комплект діє лише при виборі <b>різних кольорів</b>. Оберіть, будь ласка, інший відтінок.</div>
+        <button type="button" class="alert-btn" onclick="closeDuplicateAlert()">Зрозуміло</button>
+    </div>
+</div>
+
+<script>
+    /* ===================== БАЗОВА ЦІНА ===================== */
+    const BASE_PRICE = 896;          // ціна першого комплекту
+    const DISCOUNT_RATE = 0.20;      // знижка на 2-й і кожен наступний комплект (інший колір)
+
+    function priceForPosition(index) {
+        // index === 0 -> перший комплект без знижки, далі -20%
+        return index === 0 ? BASE_PRICE : Math.round(BASE_PRICE * (1 - DISCOUNT_RATE));
+    }
+
+    /* ===================== ГАЛЕРЕЯ "ДЕТАЛЬНИЙ ОГЛЯД" ===================== */
+    function selectGalleryPhoto(img) {
+        const thumbs = img.parentElement;
+        const mainId = thumbs.id.replace('-thumbs', '-main');
+        document.getElementById(mainId).src = img.getAttribute('src');
+        thumbs.querySelectorAll('img').forEach(t => t.classList.remove('active'));
+        img.classList.add('active');
+    }
+
+    function syncGalleryMain(thumbsId) {
+        const thumbs = document.getElementById(thumbsId);
+        if (!thumbs) return;
+        const active = thumbs.querySelector('img.active') || thumbs.querySelector('img');
+        if (!active) return;
+        const mainId = thumbsId.replace('-thumbs', '-main');
+        document.getElementById(mainId).src = active.getAttribute('src');
+    }
+
+    /* ===================== КАРТКИ КОЛЬОРІВ ===================== */
+    // Клік по картці кольору просто підсвічує її (не додає в кошик) — головне фото
+    // товару в блоці "Детальний огляд" незалежне (фото 7.jpg...12.jpg).
+    function selectColorPhoto(card) {
+        document.querySelectorAll('#colorGrid .color-card').forEach(c => c.classList.remove('active-photo'));
+        card.classList.add('active-photo');
+    }
+
+    function isColorInCart(colorName) {
+        return getCart().some(i => i.color === colorName);
+    }
+
+    // Додає в кошик той колір, чию кнопку натиснули. Один колір можна додати лише один раз.
+    function addToCartFromCard(button) {
+        const card = button.closest('.color-card');
+        const colorName = card.dataset.color;
+
+        if (isColorInCart(colorName)) {
+            document.getElementById('duplicateColorAlert').style.display = 'flex';
+            return;
+        }
+
+        const grid = document.getElementById('colorGrid');
+        const fullName = grid.dataset.setName + ' — ' + colorName;
+        const itemId = 'colorGrid-' + colorName;
+
+        addToCart(itemId, fullName, colorName);
+        button.textContent = 'У кошику ✓';
+        button.classList.add('added');
+        button.disabled = true;
+    }
+
+    // Кнопка "Додати обраний колір у кошик" внизу блоку — бере поточно виділену (active-photo) картку.
+    function quickAddActive() {
+        const grid = document.getElementById('colorGrid');
+        const activeCard = grid.querySelector('.color-card.active-photo') || grid.querySelector('.color-card');
+        const addBtn = activeCard.querySelector('.btn-add-cart');
+        addToCartFromCard(addBtn);
+        if (!document.getElementById('duplicateColorAlert').style.display || document.getElementById('duplicateColorAlert').style.display === 'none') {
+            scrollToOrder();
+        }
+    }
+
+    function openLightbox(imgId) {
+        const src = document.getElementById(imgId).src;
+        const w = window.open('', '_blank');
+        w.document.write('<body style="margin:0;background:#000;display:flex;align-items:center;justify-content:center;height:100vh;"><img src="' + src + '" style="max-width:100%;max-height:100%;"></body>');
+    }
+
+    /* ===================== КОШИК (localStorage) ===================== */
+    const CART_KEY = 'winterkit_cart';
+
+    function getCart() {
+        try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+        catch (e) { return []; }
+    }
+    function saveCart(cart) {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        updateHeaderCartCount();
+        renderCartSummary();
+        syncAddButtonsWithCart();
+    }
+    function addToCart(id, name, colorName) {
+        const cart = getCart();
+        if (cart.some(i => i.id === id)) return; // вже є — не дублюємо
+        cart.push({ id, name, color: colorName });
+        saveCart(cart);
+    }
+    function removeFromCart(id) {
+        saveCart(getCart().filter(i => i.id !== id));
+    }
+    function cartTotalCount() {
+        return getCart().length;
+    }
+    function updateHeaderCartCount() {
+        const total = cartTotalCount();
+        const top = document.getElementById('cart-count');
+        const floating = document.getElementById('cart-count-floating');
+        if (top) top.textContent = total;
+        if (floating) floating.textContent = total;
+    }
+
+    // Після зміни кошика — синхронізуємо стан кнопок "Додати в кошик" на картках кольорів
+    // (наприклад, якщо товар видалили з кошика через форму — кнопка знову стає активною).
+    function syncAddButtonsWithCart() {
+        const cart = getCart();
+        document.querySelectorAll('#colorGrid .color-card').forEach(card => {
+            const colorName = card.dataset.color;
+            const btn = card.querySelector('.btn-add-cart');
+            const inCart = cart.some(i => i.color === colorName);
+            if (inCart) {
+                btn.textContent = 'У кошику ✓';
+                btn.classList.add('added');
+                btn.disabled = true;
+            } else {
+                btn.textContent = 'Додати в кошик';
+                btn.classList.remove('added');
+                btn.disabled = false;
+            }
+        });
+    }
+
+    function renderCartSummary() {
+        const container = document.getElementById('cartSummary');
+        if (!container) return;
+        const cart = getCart();
+        if (cart.length === 0) {
+            container.innerHTML = '<div class="cart-empty">Кошик порожній. Оберіть колір комплекту вище і натисніть «Додати в кошик».</div>';
+            return;
+        }
+        let totalSum = 0;
+        container.innerHTML = cart.map((item, index) => {
+            const price = priceForPosition(index);
+            totalSum += price;
+            const discountTag = index > 0 ? '<span class="discount-tag">-20%</span>' : '';
+            return '<div class="cart-row">' +
+                '<div class="cart-row-info"><div class="cart-row-name">' + item.name + '</div>' +
+                '<div class="cart-row-price">' + price.toLocaleString('uk-UA') + ' грн' + discountTag + '</div></div>' +
+                '<button type="button" class="cart-remove" onclick="removeFromCart(\'' + item.id + '\')" title="Прибрати">✕</button>' +
+                '</div>';
+        }).join('') + '<div class="cart-total"><span>Разом</span><span>' + totalSum.toLocaleString('uk-UA') + ' грн</span></div>';
+    }
+
+    function handleCartClick() {
+        if (cartTotalCount() === 0) {
+            document.getElementById('emptyCartAlert').style.display = 'flex';
+        } else {
+            scrollToOrder();
+        }
+    }
+    function closeEmptyCartAlert() {
+        document.getElementById('emptyCartAlert').style.display = 'none';
+        document.getElementById('colorGrid').scrollIntoView({ behavior: 'smooth' });
+    }
+    function closeDuplicateAlert() {
+        document.getElementById('duplicateColorAlert').style.display = 'none';
+    }
+
+    function scrollToOrder() {
+        document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ===================== ВІДПРАВКА ЗАЯВКИ ===================== */
+    // Заявка йде на Cloudflare Worker: він надсилає її в Telegram і в CRM.
+    // Токен Telegram-бота на сайті більше НЕ зберігається (раніше він лежав у відкритому коді сторінки).
+    const ORDER_URL = 'https://silent-limit-bd36.target-smm24.workers.dev';
+    const SITE_KEY = 'hats';                 // сайт шапок (Дроп): за цим ключем воркер позначає заявку «ДРОП»
+    const formOpenedAt = Date.now();
+    let isSubmitting = false;
+
+    // Звідки прийшов клієнт (мітки реклами з посилання)
+    function getSrc() {
+        try {
+            const p = new URLSearchParams(location.search);
+            return {
+                source: p.get('utm_source') || '', medium: p.get('utm_medium') || '',
+                campaign: p.get('utm_campaign') || '', content: p.get('utm_content') || '',
+                fbclid: p.has('fbclid')
+            };
+        } catch (e) { return {}; }
+    }
+
+    // Приводить номер до формату +380XXXXXXXXX або повертає null, якщо номер недійсний
+    function normalizePhone(raw) {
+        let d = String(raw).replace(/\D/g, '');
+        if (d.length === 10 && d.startsWith('0')) d = '38' + d;
+        else if (d.length === 11 && d.startsWith('80')) d = '3' + d;
+        if (!/^380\d{9}$/.test(d)) return null;
+        const code = d.slice(3, 5);
+        const valid = ['39','50','63','66','67','68','73','75','77','91','92','93','94','95','96','97','98','99'];
+        if (!valid.includes(code)) return null;
+        const local = d.slice(5);
+        if (/^(\d)\1{6}$/.test(local)) return null;
+        if ('01234567890'.includes(local) || '98765432109'.includes(local)) return null;
+        return '+' + d;
+    }
+
+    function showFormError(msg) {
+        document.getElementById('formErrorMessage').textContent = msg;
+        document.getElementById('formErrorAlert').style.display = 'flex';
+    }
+
+    async function submitOrderForm(event) {
+        event.preventDefault();
+        if (isSubmitting) return false;
+
+        const name = document.getElementById('clientName').value.trim();
+        const phoneRaw = document.getElementById('clientPhone').value.trim();
+        const comment = document.getElementById('clientComment').value.trim();
+        const cart = getCart();
+
+        if (cart.length === 0) {
+            showFormError('Кошик порожній. Оберіть колір комплекту та натисніть «Додати в кошик», а потім заповніть ім\'я і телефон.');
+            return false;
+        }
+        if (!name || !phoneRaw) {
+            showFormError('Будь ласка, заповніть ім\'я та номер телефону.');
+            return false;
+        }
+
+        // Антибот: «пастка» для ботів + занадто швидка відправка
+        if (document.getElementById('orderWebsite').value) return false;
+        if (Date.now() - formOpenedAt < 4000) { showFormError('Будь ласка, перевірте дані та спробуйте ще раз.'); return false; }
+
+        const phone = normalizePhone(phoneRaw);
+        if (!phone) {
+            document.getElementById('phoneError').style.display = 'block';
+            document.getElementById('clientPhone').focus();
+            return false;
+        }
+        document.getElementById('phoneError').style.display = 'none';
+
+        const setName = document.getElementById('colorGrid').dataset.setName || 'В\'язаний комплект';
+        const items = cart.map((item, index) => ({ p: setName, c: item.color, price: priceForPosition(index), base: BASE_PRICE }));
+        const totalSum = items.reduce((a, i) => a + i.price, 0);
+
+        isSubmitting = true;
+        const submitBtn = document.querySelector('.btn-submit-order');
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Відправляємо...'; submitBtn.style.opacity = '0.7'; }
+
+        try {
+            const resp = await fetch(ORDER_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, phone, total: totalSum, comment, site: SITE_KEY, src: getSrc(), items })
+            });
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        } catch (err) {
+            console.error('Помилка відправки заявки:', err);
+            isSubmitting = false;
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Відправити заявку'; submitBtn.style.opacity = ''; }
+            showFormError('Не вдалося відправити заявку. Спробуйте ще раз або зателефонуйте нам.');
+            return false;      // кошик НЕ очищаємо — клієнт може спробувати ще раз
+        }
+
+        document.getElementById('leadForm').reset();
+        localStorage.removeItem(CART_KEY);
+        updateHeaderCartCount();
+        renderCartSummary();
+        syncAddButtonsWithCart();
+        if (typeof fbq === 'function') {
+            fbq('track', 'Lead');
+            fbq('track', 'Purchase', { value: totalSum, currency: 'UAH' });
+        }
+        isSubmitting = false;
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Відправити заявку'; submitBtn.style.opacity = ''; }
+        document.getElementById('orderSuccessAlert').style.display = 'flex';
+        return false;
+    }
+
+    function closeSuccessAlert() { document.getElementById('orderSuccessAlert').style.display = 'none'; }
+    function closeErrorAlert() { document.getElementById('formErrorAlert').style.display = 'none'; }
+
+    /* ===================== Карусель відгуків ===================== */
+    let currentIndex = 0;
+    function showSlide(index) {
+        const track = document.getElementById('carouselTrack');
+        if (!track) return;
+        const cards = track.children;
+        if (index >= cards.length) currentIndex = 0;
+        if (index < 0) currentIndex = cards.length - 1;
+        track.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+    }
+    function nextSlide() { currentIndex++; showSlide(currentIndex); }
+    function prevSlide() { currentIndex--; showSlide(currentIndex); }
+
+    /* ===================== Лічильник відвідувачів онлайн ===================== */
+    const viewerCounts = [2, 3, 4, 5, 3, 2, 6, 4];
+
+    function updateViewersCount() {
+        const countElem = document.getElementById('viewers-count');
+        if (!countElem) return;
+        countElem.textContent = viewerCounts[Math.floor(Math.random() * viewerCounts.length)];
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const ph = document.getElementById('clientPhone');
+        if (ph) ph.addEventListener('input', () => { document.getElementById('phoneError').style.display = 'none'; });
+        syncGalleryMain('gallery1-thumbs');
+        updateHeaderCartCount();
+        renderCartSummary();
+        syncAddButtonsWithCart();
+        updateViewersCount();
+        setInterval(updateViewersCount, 20000);
+    });
+</script>
+
+</body>
+</html>
